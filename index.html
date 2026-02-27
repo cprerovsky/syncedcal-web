@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SyncedCal – Sync Your Work Calendar to Google. No IT Required.</title>
+  <meta name="description" content="SyncedCal syncs your corporate calendar to Google Calendar directly from your iPhone. No Microsoft API. No IT approval. No drama." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="logo">SyncedCal</div>
+      <a href="#waitlist" class="btn btn-sm">Get Early Access</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="badge">Coming soon to iOS</div>
+      <h1>Sync your work calendar to Google.<br>No IT department required.</h1>
+      <p class="hero-sub">Your iPhone already has your corporate calendar. SyncedCal moves it to Google Calendar — privately, automatically, without touching Microsoft's servers.</p>
+      <a href="#waitlist" class="btn btn-lg">Join the Waitlist</a>
+      <p class="hero-note">Free to try. One-time purchase to unlock all features.</p>
+    </div>
+  </section>
+
+  <!-- PROBLEM -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2>Every other sync tool needs IT's permission.</h2>
+      <p class="section-sub">CalendarBridge, SyncMate, Power Automate — they all connect to Microsoft 365 via OAuth. That means IT approval. That means your company's policy blocks them. That means it doesn't work.</p>
+      <div class="cards">
+        <div class="card card-problem">
+          <div class="card-icon">🚫</div>
+          <h3>CalendarBridge</h3>
+          <p>Requires Microsoft 365 OAuth. Blocked by corporate IT policy.</p>
+        </div>
+        <div class="card card-problem">
+          <div class="card-icon">🚫</div>
+          <h3>Power Automate</h3>
+          <p>Needs admin setup. Too complex. Still requires IT sign-off.</p>
+        </div>
+        <div class="card card-problem">
+          <div class="card-icon">🚫</div>
+          <h3>Manual .ics export</h3>
+          <p>Painful, one-time, never automatic. Not a real solution.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="container">
+      <h2>SyncedCal never talks to Microsoft's servers.</h2>
+      <p class="section-sub">Your iPhone already syncs your work calendar via iOS Settings. We read what's already there — locally, on your device — and write it to your Google Calendar. That's it.</p>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Your calendar is already on your iPhone</h3>
+            <p>iOS syncs your Exchange or M365 calendar when you add it in Settings. No extra setup needed.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>SyncedCal reads it via EventKit</h3>
+            <p>Apple's EventKit lets apps read all on-device calendars. No Microsoft API. No corporate credentials. No IT policy conflict.</p>
+          </div>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Your events appear in Google Calendar</h3>
+            <p>We write to your personal Google Calendar via your own Google account. Your family sees your schedule. Your IT department never knows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USE CASE -->
+  <section class="section section-alt">
+    <div class="container use-case">
+      <div class="use-case-text">
+        <h2>Finally, she knows when you're free for dinner.</h2>
+        <p>Your partner manages the family calendar in Google Calendar. Your work schedule is a black hole. SyncedCal bridges the gap — your meetings show up in your family's shared calendar, automatically.</p>
+        <ul class="use-case-list">
+          <li>No more "are you free at 6?" texts</li>
+          <li>No more scheduling conflicts</li>
+          <li>No more asking IT for permission</li>
+        </ul>
+      </div>
+      <div class="use-case-visual">
+        <div class="phone-mock">
+          <div class="phone-event">
+            <span class="event-dot work"></span>
+            <span>Team Standup · 9:00</span>
+          </div>
+          <div class="phone-event">
+            <span class="event-dot work"></span>
+            <span>1:1 with Sarah · 11:00</span>
+          </div>
+          <div class="phone-event">
+            <span class="event-dot family"></span>
+            <span>School pickup · 15:30</span>
+          </div>
+          <div class="phone-event">
+            <span class="event-dot work"></span>
+            <span>Product Review · 16:00</span>
+          </div>
+          <div class="phone-event free">
+            <span class="event-dot free-dot"></span>
+            <span>Free from 17:30 ✓</span>
+          </div>
+        </div>
+        <p class="mock-caption">Work events (synced) + family events in one calendar</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIVACY -->
+  <section class="section">
+    <div class="container">
+      <h2>Privacy by design.</h2>
+      <p class="section-sub">Your calendar data never touches our servers. Ever.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="card-icon">📱</div>
+          <h3>On-device only</h3>
+          <p>All reading and processing happens on your iPhone. No cloud backend. No data storage on our end.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">🔒</div>
+          <h3>Busy mode</h3>
+          <p>Don't want to share event titles? Sync events as "Busy" only — your family sees you're unavailable, not what the meeting is about.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon">✅</div>
+          <h3>GDPR compliant</h3>
+          <p>You control your data. Your Google account. Your Google Calendar. We're just the pipe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="section section-alt">
+    <div class="container pricing">
+      <h2>One-time purchase. No subscription.</h2>
+      <p class="section-sub">This is infrastructure. You pay once and forget about it.</p>
+      <div class="pricing-cards">
+        <div class="pricing-card">
+          <div class="pricing-tier">Free</div>
+          <div class="pricing-price">€0</div>
+          <ul>
+            <li>Sync today's events</li>
+            <li>Manual sync trigger</li>
+            <li>Full or "Busy" privacy mode</li>
+            <li>One calendar</li>
+          </ul>
+          <a href="#waitlist" class="btn btn-outline">Join Waitlist</a>
+        </div>
+        <div class="pricing-card pricing-card-featured">
+          <div class="pricing-badge">Launch price</div>
+          <div class="pricing-tier">Full Access</div>
+          <div class="pricing-price">€29.99 <span class="pricing-note">one-time</span></div>
+          <ul>
+            <li>Rolling 3-week sync window</li>
+            <li>Automatic background sync</li>
+            <li>Multiple calendars</li>
+            <li>Event filters &amp; privacy controls</li>
+            <li>Sync log</li>
+          </ul>
+          <a href="#waitlist" class="btn">Join Waitlist</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WAITLIST -->
+  <section class="section waitlist" id="waitlist">
+    <div class="container waitlist-inner">
+      <h2>Be the first to know when SyncedCal launches.</h2>
+      <p>Drop your email and we'll notify you when the app is ready. No spam. One email when it launches.</p>
+      <form class="waitlist-form" id="waitlistForm">
+        <input type="email" id="emailInput" placeholder="your@email.com" required />
+        <button type="submit" class="btn">Notify Me</button>
+      </form>
+      <p class="waitlist-legal">By submitting your email you agree to receive one launch notification. No marketing emails. Unsubscribe anytime. <a href="privacy.html">Privacy Policy</a>.</p>
+      <div id="formSuccess" class="form-success" style="display:none">
+        You're on the list. We'll be in touch when SyncedCal launches.
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">SyncedCal</div>
+      <div class="footer-links">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:hello@syncedcal.com">Contact</a>
+      </div>
+      <p class="footer-note">SyncedCal reads calendar data via iOS EventKit. It does not access Microsoft 365 via any API or credential. Users are responsible for understanding their employer's acceptable use policies.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
