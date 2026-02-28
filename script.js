@@ -1,6 +1,6 @@
 // Replace this URL with your Google Apps Script Web App URL
 // See README.md for setup instructions
-const APPS_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby8LQeRPaO6lS5Rnml9CsWIDmpjLckzTMNEndKDhqt1URntP-CtXBscVYFrRUmRe0Ay/exec';
 
 document.getElementById('waitlistForm').addEventListener('submit', async function(e) {
   e.preventDefault();
