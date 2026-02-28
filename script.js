@@ -1,6 +1,6 @@
 // Replace this URL with your Google Apps Script Web App URL
 // See README.md for setup instructions
-const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycby8LQeRPaO6lS5Rnml9CsWIDmpjLckzTMNEndKDhqt1URntP-CtXBscVYFrRUmRe0Ay/exec';
+const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwBXclk538XZUQa6Ct4ggwMs_fGRZzvb7CWdDIqWWrTjYOB4ZqHjd_EhlDPxhRfFg/exec';
 
 // Privacy level toggle
 const privacyDescriptions = {
