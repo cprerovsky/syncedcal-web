@@ -207,6 +207,7 @@ body {
   color: var(--text);
   align-self: flex-start;
   border-bottom-left-radius: 4px;
+  transition: opacity 0.4s ease;
 }
 .chat-bubble.outgoing {
   background: #2563EB;

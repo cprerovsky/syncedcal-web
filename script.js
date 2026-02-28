@@ -4,18 +4,26 @@ const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwBXclk538XZUQa
 
 // Chat animation
 function initChatAnimation() {
+  const incoming = document.getElementById('chatIncoming');
   const typing = document.getElementById('chatTyping');
-  const reply = document.getElementById('chatReply');
-  if (!typing || !reply) return;
+  const reply1 = document.getElementById('chatReply1');
+  const reply2 = document.getElementById('chatReply2');
+  if (!incoming || !typing || !reply1 || !reply2) return;
 
-  setTimeout(() => {
-    typing.style.display = 'flex';
-  }, 1200);
+  // 300ms: incoming message fades in
+  setTimeout(() => { incoming.style.opacity = '1'; }, 300);
 
+  // 1500ms: typing dots
+  setTimeout(() => { typing.style.display = 'flex'; }, 1500);
+
+  // 3200ms: first reply
   setTimeout(() => {
     typing.style.display = 'none';
-    reply.style.opacity = '1';
-  }, 3000);
+    reply1.style.opacity = '1';
+  }, 3200);
+
+  // 3900ms: second reply
+  setTimeout(() => { reply2.style.opacity = '1'; }, 3900);
 }
 
 // Privacy level toggle
