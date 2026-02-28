@@ -55,6 +55,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
+  // Inline waitlist form
+  const inlineForm = document.getElementById('inlineWaitlistForm');
+  if (inlineForm) {
+    inlineForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const email = document.getElementById('inlineEmailInput').value;
+      const btn = this.querySelector('button');
+      const success = document.getElementById('inlineFormSuccess');
+      btn.disabled = true;
+      btn.textContent = '...';
+      try {
+        await fetch(APPS_SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, timestamp: new Date().toISOString() })
+        });
+        inlineForm.style.display = 'none';
+        success.style.display = 'block';
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Notify me';
+      }
+    });
+  }
+
   // Waitlist form
   const form = document.getElementById('waitlistForm');
   if (form) {
