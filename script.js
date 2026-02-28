@@ -65,8 +65,19 @@ function setPrivacy(level) {
 // Attach privacy tabs after DOM ready
 document.addEventListener('DOMContentLoaded', function() {
 
-  // Chat animation
-  initChatAnimation();
+  // Chat animation — start when section scrolls into view
+  const chatSection = document.querySelector('.chat-mock');
+  if (chatSection) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          observer.disconnect();
+          initChatAnimation();
+        }
+      });
+    }, { threshold: 0.4 });
+    observer.observe(chatSection);
+  }
 
   // Privacy tabs
   document.querySelectorAll('.privacy-tab').forEach(tab => {
