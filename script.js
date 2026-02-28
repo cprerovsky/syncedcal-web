@@ -2,6 +2,22 @@
 // See README.md for setup instructions
 const APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwBXclk538XZUQa6Ct4ggwMs_fGRZzvb7CWdDIqWWrTjYOB4ZqHjd_EhlDPxhRfFg/exec';
 
+// Chat animation
+function initChatAnimation() {
+  const typing = document.getElementById('chatTyping');
+  const reply = document.getElementById('chatReply');
+  if (!typing || !reply) return;
+
+  setTimeout(() => {
+    typing.style.display = 'flex';
+  }, 1200);
+
+  setTimeout(() => {
+    typing.style.display = 'none';
+    reply.style.opacity = '1';
+  }, 3000);
+}
+
 // Privacy level toggle
 const privacyDescriptions = {
   full: 'Event titles and times are synced as-is. Your family sees exactly what\'s in your calendar.',
@@ -34,6 +50,9 @@ function setPrivacy(level) {
 
 // Attach privacy tabs after DOM ready
 document.addEventListener('DOMContentLoaded', function() {
+
+  // Chat animation
+  initChatAnimation();
 
   // Privacy tabs
   document.querySelectorAll('.privacy-tab').forEach(tab => {
