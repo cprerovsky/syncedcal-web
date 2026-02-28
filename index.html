@@ -8,6 +8,56 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is this allowed? Will my IT department notice?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "SyncedCal reads calendar data that iOS has already synced to your device. It does not connect to your company's servers or Microsoft 365. From your IT department's perspective, nothing happens. That said, you're responsible for understanding your employer's acceptable use policies."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to do anything complicated to set it up?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If your work calendar is already on your iPhone (Settings > Mail > Accounts), you're 90% done. Open SyncedCal, pick a source, pick a destination, and you're running."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens to my calendar data?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "It goes from your phone to your Google Calendar. That's it. SyncedCal has no backend, no database, no storage. We never see your events."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does this work with any corporate calendar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "If you can add it to your iPhone in Settings > Mail > Accounts (Exchange, Microsoft 365, and most corporate setups), SyncedCal can sync it."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much does it cost?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Syncing today's events is free forever. Full sync (rolling 3 weeks, automatic, multiple calendars) is a one-time purchase. No subscription. You pay once, you're done."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -15,7 +65,7 @@
   <header class="nav">
     <div class="container nav-inner">
       <div class="logo">SyncedCal</div>
-      <a href="#waitlist" class="btn btn-sm">Get Early Access</a>
+      <a href="#waitlist" class="btn btn-sm" onclick="focusEmail()">Stay in the loop</a>
     </div>
   </header>
 
@@ -25,7 +75,7 @@
       <div class="badge">Coming soon to iPhone</div>
       <h1>Your family finally knows<br>when you're free.</h1>
       <p class="hero-sub">SyncedCal syncs your work calendar to Google Calendar, automatically and privately. No IT approval needed. Nothing stored in the cloud.</p>
-      <a href="#waitlist" class="btn btn-lg">Join the Waitlist</a>
+      <a href="#waitlist" class="btn btn-lg" onclick="focusEmail()">Get notified when it launches</a>
       <p class="hero-note">Free to use. One-time purchase to unlock full sync.</p>
     </div>
   </section>
@@ -39,7 +89,7 @@
         <p>So you end up texting "are you free tonight?" from a meeting, hoping for the best.</p>
       </div>
       <div class="problem-quote">
-        <p>"Can't you just share your calendar with me?"</p>
+        <p>Can't you just share your calendar with me?</p>
         <span>Every partner of every corporate employee, ever.</span>
       </div>
     </div>
@@ -76,17 +126,18 @@
     </div>
   </section>
 
-  <!-- USE CASE / VISUAL -->
+  <!-- PRIVACY LEVELS -->
   <section class="section section-alt">
-    <div class="container use-case">
-      <div class="use-case-text">
-        <h2>One view for the whole family.</h2>
-        <p>Your work meetings. Her appointments. The school run. All in one shared Google Calendar, always up to date.</p>
-        <ul class="use-case-list">
-          <li>She sees your meetings before planning her day</li>
-          <li>You stop double-booking dinner and late calls</li>
-          <li>No more coordination chaos over WhatsApp</li>
-        </ul>
+    <div class="container privacy-demo">
+      <div class="privacy-demo-text">
+        <h2>You control what your family sees.</h2>
+        <p>Not every meeting needs to be visible by name. SyncedCal lets you choose how much detail gets shared.</p>
+        <div class="privacy-tabs">
+          <button class="privacy-tab active" data-level="full" onclick="setPrivacy('full')">Full details</button>
+          <button class="privacy-tab" data-level="private" onclick="setPrivacy('private')">Marked private</button>
+          <button class="privacy-tab" data-level="busy" onclick="setPrivacy('busy')">Busy only</button>
+        </div>
+        <p class="privacy-desc" id="privacyDesc">Event titles and times are synced as-is. Your family sees exactly what's in your calendar.</p>
       </div>
       <div class="use-case-visual">
         <div class="phone-mock">
@@ -94,28 +145,28 @@
           <div class="phone-event">
             <span class="event-dot work"></span>
             <div>
-              <span class="event-title">Team Standup</span>
+              <span class="event-title" data-full="Team Standup" data-private="Team Standup" data-busy="Busy">Team Standup</span>
               <span class="event-time">9:00 – 9:30</span>
             </div>
           </div>
           <div class="phone-event">
             <span class="event-dot work"></span>
             <div>
-              <span class="event-title">Product Review</span>
+              <span class="event-title" data-full="Board Review" data-private="Private" data-busy="Busy">Board Review</span>
               <span class="event-time">11:00 – 12:00</span>
             </div>
           </div>
           <div class="phone-event">
             <span class="event-dot family"></span>
             <div>
-              <span class="event-title">School pickup</span>
+              <span class="event-title" data-full="School pickup" data-private="School pickup" data-busy="School pickup">School pickup</span>
               <span class="event-time">15:30</span>
             </div>
           </div>
           <div class="phone-event">
             <span class="event-dot work"></span>
             <div>
-              <span class="event-title">1:1 with Sarah</span>
+              <span class="event-title" data-full="1:1 with Sarah" data-private="Private" data-busy="Busy">1:1 with Sarah</span>
               <span class="event-time">16:00 – 16:30</span>
             </div>
           </div>
@@ -127,7 +178,7 @@
             </div>
           </div>
         </div>
-        <p class="mock-caption">Work events synced automatically, alongside your family calendar</p>
+        <p class="mock-caption" id="mockCaption">All event titles visible</p>
       </div>
     </div>
   </section>
@@ -144,9 +195,9 @@
           <p>SyncedCal reads your calendar directly on your device and writes it to your Google account. Our servers are never in the loop.</p>
         </div>
         <div class="card">
-          <div class="card-icon">👁️</div>
-          <h3>Busy mode</h3>
-          <p>Not comfortable sharing meeting titles? Sync events as "Busy" only. Your family sees you're unavailable, not what the meeting is about.</p>
+          <div class="card-icon">🔒</div>
+          <h3>Your data, your rules</h3>
+          <p>Choose what gets shared: full event details, or just blocked time. You decide per calendar, not per event.</p>
         </div>
         <div class="card">
           <div class="card-icon">🏢</div>
@@ -161,8 +212,8 @@
   <section class="section section-alt">
     <div class="container founder">
       <div class="founder-inner">
-        <p class="founder-quote">"My employer blocks every calendar sync tool. My wife had no idea when I was in back-to-back meetings or when I'd be home. I built SyncedCal because the problem was obvious and the solution was sitting right there on my phone the whole time."</p>
-        <p class="founder-name">Clemens Prerovsky, founder of SyncedCal</p>
+        <p class="founder-quote">Our IT department blocks every calendar sync tool. My wife had no idea when I was in back-to-back meetings or when I'd be home. I built SyncedCal because the problem was obvious and the solution was sitting right there on my phone the whole time.</p>
+        <p class="founder-name">Clemens Prerovsky, creator of SyncedCal</p>
       </div>
     </div>
   </section>
@@ -199,15 +250,15 @@
   <!-- WAITLIST -->
   <section class="section waitlist" id="waitlist">
     <div class="container waitlist-inner">
-      <h2>Be first in line when SyncedCal launches.</h2>
-      <p>One email when it's ready. No spam. No newsletters. Just a heads up.</p>
+      <h2>SyncedCal is in development.</h2>
+      <p>Leave your email and we'll let you know the moment it's ready to download. One email. No spam.</p>
       <form class="waitlist-form" id="waitlistForm">
         <input type="email" id="emailInput" placeholder="your@email.com" required />
-        <button type="submit" class="btn">Notify Me</button>
+        <button type="submit" class="btn">Notify me when it launches</button>
       </form>
       <p class="waitlist-legal">By submitting your email you agree to receive one launch notification. No marketing emails. Unsubscribe anytime. <a href="privacy.html">Privacy Policy</a>.</p>
       <div id="formSuccess" class="form-success" style="display:none">
-        You're on the list. We'll let you know when SyncedCal is ready.
+        You're on the list. We'll be in touch when SyncedCal is ready.
       </div>
     </div>
   </section>
