@@ -65,7 +65,7 @@
   <header class="nav">
     <div class="container nav-inner">
       <div class="logo">SyncedCal</div>
-      <a href="#waitlist" class="btn btn-sm" onclick="focusEmail()">Stay in the loop</a>
+      <a href="#waitlist" class="btn btn-sm" data-focus-email>Stay in the loop</a>
     </div>
   </header>
 
@@ -75,7 +75,7 @@
       <div class="badge">Coming soon to iPhone</div>
       <h1>Your family finally knows<br>when you're free.</h1>
       <p class="hero-sub">SyncedCal syncs your work calendar to Google Calendar, automatically and privately. No IT approval needed. Nothing stored in the cloud.</p>
-      <a href="#waitlist" class="btn btn-lg" onclick="focusEmail()">Get notified when it launches</a>
+      <a href="#waitlist" class="btn btn-lg" data-focus-email>Get notified when it launches</a>
       <p class="hero-note">Free to use. One-time purchase to unlock full sync.</p>
     </div>
   </section>
@@ -133,9 +133,9 @@
         <h2>You control what your family sees.</h2>
         <p>Not every meeting needs to be visible by name. SyncedCal lets you choose how much detail gets shared.</p>
         <div class="privacy-tabs">
-          <button class="privacy-tab active" data-level="full" onclick="setPrivacy('full')">Full details</button>
-          <button class="privacy-tab" data-level="private" onclick="setPrivacy('private')">Marked private</button>
-          <button class="privacy-tab" data-level="busy" onclick="setPrivacy('busy')">Busy only</button>
+          <button class="privacy-tab active" data-level="full">Full details</button>
+          <button class="privacy-tab" data-level="private">Marked private</button>
+          <button class="privacy-tab" data-level="busy">Busy only</button>
         </div>
         <p class="privacy-desc" id="privacyDesc">Event titles and times are synced as-is. Your family sees exactly what's in your calendar.</p>
       </div>

@@ -223,31 +223,33 @@ body {
 .privacy-demo-text h2 { margin-bottom: 12px; }
 .privacy-demo-text p { color: var(--text-muted); margin-bottom: 20px; font-size: 16px; }
 .privacy-tabs {
-  display: flex;
-  gap: 8px;
+  display: inline-flex;
+  gap: 0;
   margin-bottom: 20px;
-  flex-wrap: wrap;
+  background: var(--border);
+  border-radius: 10px;
+  padding: 3px;
 }
 .privacy-tab {
-  padding: 8px 16px;
-  border-radius: 20px;
-  border: 2px solid var(--border);
-  background: var(--bg);
+  padding: 8px 18px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   color: var(--text-muted);
   font-family: inherit;
-  transition: all 0.15s;
+  transition: all 0.18s;
+  line-height: 1.4;
 }
 .privacy-tab.active {
-  background: var(--blue);
-  border-color: var(--blue);
-  color: #fff;
+  background: #fff;
+  color: var(--blue);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.10);
 }
 .privacy-tab:hover:not(.active) {
-  border-color: var(--blue);
-  color: var(--blue);
+  color: var(--text);
 }
 .privacy-desc {
   font-size: 14px;
