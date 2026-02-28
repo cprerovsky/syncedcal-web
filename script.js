@@ -22,8 +22,14 @@ function initChatAnimation() {
     reply1.style.opacity = '1';
   }, 3200);
 
-  // 3900ms: second reply
-  setTimeout(() => { reply2.style.opacity = '1'; }, 3900);
+  // 4200ms: second typing indicator briefly
+  setTimeout(() => { typing.style.display = 'flex'; }, 4200);
+
+  // 5200ms: second reply
+  setTimeout(() => {
+    typing.style.display = 'none';
+    reply2.style.opacity = '1';
+  }, 5200);
 }
 
 // Privacy level toggle
