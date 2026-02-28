@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', function() {
       } catch (err) {
         btn.disabled = false;
         btn.textContent = 'Notify me when it launches';
-        alert('Something went wrong. Please try again or email us at hello@syncedcal.com');
+        alert('Something went wrong. Please try again or email us at hello@calshared.com');
       }
     });
   }
