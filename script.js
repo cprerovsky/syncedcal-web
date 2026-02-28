@@ -66,12 +66,8 @@ document.addEventListener('DOMContentLoaded', function() {
       btn.disabled = true;
       btn.textContent = '...';
       try {
-        await fetch(APPS_SCRIPT_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, timestamp: new Date().toISOString() })
-        });
+        const body = new URLSearchParams({ email, timestamp: new Date().toISOString() });
+        await fetch(APPS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body });
         inlineForm.style.display = 'none';
         success.style.display = 'block';
       } catch (err) {
@@ -95,12 +91,8 @@ document.addEventListener('DOMContentLoaded', function() {
       btn.textContent = 'Sending...';
 
       try {
-        await fetch(APPS_SCRIPT_URL, {
-          method: 'POST',
-          mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email, timestamp: new Date().toISOString() })
-        });
+        const body = new URLSearchParams({ email, timestamp: new Date().toISOString() });
+        await fetch(APPS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body });
         form.style.display = 'none';
         success.style.display = 'block';
       } catch (err) {
